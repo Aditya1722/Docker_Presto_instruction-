@@ -1,5 +1,16 @@
+rfifind -time 0.1 -xwin  -o Lband 20130925A_0001.fits 
+prepdata -nobary -o Lband_topo_DM0.00 -dm 0.0 -mask Lband_rfifind.mask GBT_Lband_PSR.fil
+realfft Lband_topo_DM0.00.dat
+accelsearch -numharm 4 -zmax 0 Lband_topo_DM0.00.dat
+Make a text file Lband.birds using - 
+  gedit Lband.birds - add rfi you want to remove from DM = 0. exa,ple shown below  
+  #freq   width #harm grow? bary?
+  4.164   1.5    4    0      0 
+  317.116 2      4    0      0
+
 # Docker_Presto_instruction
 
-
+To start a docker container with name - aditya   
+* `sudo docker start -ai aditya` =  -i for interactive, -a to attach to the container.
 * For effectively using GUI interation use this command  
 'sudo docker run -it --rm  --privileged --network host -e DISPLAY=:1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name aditya(container_name) cirapulsarsandtransients/psr-search /bin/bash'
