@@ -13,4 +13,4 @@ Make a text file Lband.birds using -
 To start a docker container with name - aditya   
 * `sudo docker start -ai aditya` =  -i for interactive, -a to attach to the container.
 * For effectively using GUI interation use this command  
-'sudo docker run -it --rm  --privileged --network host -e DISPLAY=:1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name aditya(container_name) cirapulsarsandtransients/psr-search /bin/bash'
+`sudo docker run -it --privileged --network host -e DISPLAY=:1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name mwa adii1722/mwa_sps_pipeline:mwa /bin/bash`
