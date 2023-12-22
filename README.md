@@ -9,8 +9,11 @@ Make a text file Lband.birds using -
   317.116 2      4    0      0
 
 # Docker_Presto_instruction
-
-To start a docker container with name - aditya   
-* `sudo docker start -ai aditya` =  -i for interactive, -a to attach to the container.
-* For effectively using GUI interation use this command  
-`sudo docker run -it --privileged --network host -e DISPLAY=:1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name mwa adii1722/mwa_sps_pipeline:mwa /bin/bash`
+* step 1 - pull the image from docker hub - `sudo docker pull adii1722/mwa_sps_pipeline:mwa`  
+* step 2 - To start a docker container with name - mwa and effectively use GUI interation use this command  
+  `sudo docker run -it --privileged --network host -e DISPLAY=:1 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --name mwa adii1722/mwa_sps_pipeline:mwa /bin/bash`  
+  name of container = mwa
+  name of repository = adii1722/mwa_sps_pipeline:mwa
+* step 3 - After getting inside the container exit by typing exit and enter
+* step 4 - start the container by using command - `sudo docker start mwa`
+* step 4 - `sudo docker exec -it  mwa /bin/bash`
